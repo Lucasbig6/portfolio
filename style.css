@@ -108,6 +108,7 @@ body {
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
+    transition: all 0.3s ease;
     font-weight: bold;
 }
 
@@ -117,6 +118,7 @@ body {
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .hero-profile {
@@ -361,6 +363,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,188,212,0.4);
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-primary:hover {

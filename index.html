@@ -1,263 +1,297 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Pórtfolio Lucas Pablo</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="logo">Lucas Pablo</div>
+    <header class="header">
+        <div class="logo">📈 Lucas Pablo</div>
 
-    <nav class="menu">
-        <a href="#hero">Início</a>
-        <a href="#career">Mapa de Carreira</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
+        <nav class="menu">
+            <a href="#hero">Início</a>
+            <a href="#career">Mapa de Carreira</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-<section id="hero" class="hero">
-    <!-- Vídeo de fundo -->
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="assets/5377697-uhd_2160_3840_25fps.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-    </video>
+    <section id="hero" class="hero">
+        <!-- Vídeo de fundo -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/5377697-uhd_2160_3840_25fps.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
 
-    <!-- Overlay escuro + blur -->
-    <div class="hero-overlay"></div>
+        <!-- Overlay escuro + blur -->
+        <div class="hero-overlay"></div>
 
-    <!-- Conteúdo -->
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1>Analista de Dados & Automação</h1>
-            <p>
-                Transformando dados em decisões inteligentes com Python,
-                Power BI e soluções escaláveis.
-            </p>
+        <!-- Conteúdo -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Analista de Dados & Automação</h1>
+                <p>
+                    Transformando dados em decisões inteligentes com Python,
+                    Power BI e soluções escaláveis.
+                </p>
 
-            <div class="hero-buttons">
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                    <a href="#contato" class="btn-secondary">Contato</a>
+                </div>
+            </div>
+
+            <div class="hero-profile">
+                <img src="assets/perfil.jpg" alt="Foto de Lucas Pablo">
+            </div>
+        </div>
+    </section>
+
+    <section id="career" class="career-section">
+        <h2>Mapa de Carreira & Perfil</h2>
+
+        <div class="career-layout">
+
+            <!-- Mapa de carreira -->
+            <div class="career-timeline">
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2023 – Atual</span>
+                            <h3>Coordenador de Análise de Dados</h3>
+                            <h4>SESAPI</h4>
+                            <p>
+                                Liderança de análises, automações em Python,
+                                dashboards em Power BI e integração com APIs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2022 – Atual</span>
+                            <h3>Freelancer Analista de Dados</h3>
+                            <h4>Plataformas de freelancing</h4>
+                            <p>
+                                Análises, automações em Python,
+                                dashboards em Power BI e integrações para clientes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2022 – 2024</span>
+                            <h3>Analista de Dados</h3>
+                            <h4>Instituto de Doenças Tropicais Natan Portela</h4>
+                            <p>
+                                ETL, análise exploratória, relatórios estratégicos
+                                e apoio à decisão.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Perfil / Sobre mim -->
+            <div class="career-profile">
+                <h3>Perfil</h3>
+
+                <p class="profile-text">
+                    Sou <strong>Analista de Dados</strong> com experiência em
+                    <strong>saúde pública</strong>, atuando na transformação
+                    de dados em decisões estratégicas.
+                </p>
+
+                <p class="profile-text">
+                    Tenho forte atuação com <strong>Python</strong>,
+                    <strong>Power BI</strong>, APIs e automações, desenvolvendo
+                    soluções que reduzem tempo operacional e aumentam a
+                    confiabilidade da informação.
+                </p>
+
                 <a href="#projetos" class="btn-primary">Ver Projetos</a>
-                <a href="#contato" class="btn-secondary">Contato</a>
             </div>
+
         </div>
+    </section>
 
-        <div class="hero-profile">
-            <img src="assets/perfil.jpg" alt="Foto de Lucas Pablo">
-        </div>
-    </div>
-</section>
+    <section id="projetos" class="projetos">
+        <h2>Projetos de Destaque</h2>
 
-<section id="career" class="career-section">
-    <h2>Mapa de Carreira & Perfil</h2>
+        <div class="projetos-container">
 
-    <div class="career-layout">
-
-        <!-- Mapa de carreira -->
-        <div class="career-timeline">
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-point"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">2023 – Atual</span>
-                        <h3>Coordenador de Análise de Dados</h3>
-                        <h4>SESAPI</h4>
-                        <p>
-                            Liderança de análises, automações em Python,
-                            dashboards em Power BI e integração com APIs.
-                        </p>
-                    </div>
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="assets/paineis/painel_dengue.png" alt="Painel Arboviroses">
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-point"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">2022 – Atual</span>
-                        <h3>Freelancer Analista de Dados</h3>
-                        <h4>Plataformas de freelancing</h4>
-                        <p>
-                            Análises, automações em Python,
-                            dashboards em Power BI e integrações para clientes.
-                        </p>
-                    </div>
+                <div class="projeto-content">
+                    <h3>Painel Arboviroses</h3>
+                    <p>
+                        Dashboard para apoio à tomada de decisão
+                        no combate à Dengue e Chikungunya na Secretária de Estado de Saúde do Piauí.
+                    </p>
+
+                    <a href="pages/painel-arboviroses.html" class="btn-primary">Ver Projeto</a>
+                </div>
+            </div>
+
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="assets/paineis/andamento.png" alt="Andamento de Processos">
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-point"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">2022 – 2024</span>
-                        <h3>Analista de Dados</h3>
-                        <h4>Instituto de Doenças Tropicais Natan Portela</h4>
-                        <p>
-                            ETL, análise exploratória, relatórios estratégicos
-                            e apoio à decisão.
-                        </p>
-                    </div>
+                <div class="projeto-content">
+                    <h3>Andamento de Processos</h3>
+                    <p>
+                        Dashboard com foco em processos administrativos
+                        na Secretária de Estado de Saúde do Piauí.
+                    </p>
+
+                    <a href="pages/andamento-processos.html" class="btn-primary">Ver Projeto</a>
+                </div>
+            </div>
+
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="assets/paineis/transportes.png" alt="Transportes">
                 </div>
 
-            </div>
-        </div>
+                <div class="projeto-content">
+                    <h3>Transportes</h3>
+                    <p>
+                        Dashboard com foco em auxiliar no controle de veículos e abastecimento dos veículos da SESAPI.
+                    </p>
 
-<!-- Perfil / Sobre mim -->
-        <div class="career-profile">
-            <h3>Perfil</h3>
-
-            <p class="profile-text">
-                Sou <strong>Analista de Dados</strong> com experiência em
-                <strong>saúde pública</strong>, atuando na transformação
-                de dados em decisões estratégicas.
-            </p>
-
-            <p class="profile-text">
-                Tenho forte atuação com <strong>Python</strong>,
-                <strong>Power BI</strong>, APIs e automações, desenvolvendo
-                soluções que reduzem tempo operacional e aumentam a
-                confiabilidade da informação.
-            </p>
-
-            <a href="#projetos" class="btn-primary">Ver Projetos</a>
-        </div>
-
-    </div>
-</section>
-
-<section id="projetos" class="projetos">
-    <h2>Projetos de Destaque</h2>
-
-    <div class="projetos-container">
-
-        <div class="projetos-item">
-            <div class="projeto-img">
-                <img src="assets/paineis/painel_dengue.png" alt="Painel Arboviroses">
+                    <a href="pages/transportes.html" class="btn-primary">Ver Projeto</a>
+                </div>
             </div>
 
-            <div class="projeto-content">
-                <h3>Painel Arboviroses</h3>
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="assets/paineis/spotify.png" alt="Painel Spotify">
+                </div>
+
+                <div class="projeto-content">
+                    <h3>Painel Spotify</h3>
+                    <p>
+                        Dashboard interativo para análise de retrospectiva musical,
+                        explorando artistas mais ouvidos, gêneros e padrões de consumo anual.
+                    </p>
+
+                    <a href="pages/spotify.html" class="btn-primary">Ver Projeto</a>
+                </div>
+            </div>
+
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="assets/paineis/avc_painel.png" alt="Painel AVC e Infarto Miocardiao">
+                </div>
+
+                <div class="projeto-content">
+                    <h3>Painel AVC e Infarto Miocardiao </h3>
+                    <p>
+                        Monitoramento de indicadores epidemiológicos de AVC e Infarto Agudo do Miocárdio, auxiliando na gestão de saúde e na análise de tendências e desfechos clínicos.
+                    </p>
+
+                    <a href="pages/avc.html" class="btn-primary">Ver Projeto</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2>Habilidades Técnicas</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <span class="skill-icon">🐍</span>
+                <h3>Python</h3>
                 <p>
-                    Dashboard para apoio à tomada de decisão
-                    no combate à Dengue e Chikungunya na Secretária de Estado de Saúde do Piauí.
+                    Pandas, automações, APIs, ETL e análise de dados.
                 </p>
-
-                <button class="btn-primary"><a href="https://app.powerbi.com/view?r=eyJrIjoiYzAzYjAzMGMtNWVlMS00MWUxLTgwZWQtZDk1MTMyNGQyZTllIiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9">Ver Painel</a></button>
-            </div>
-        </div>
-
-        <div class="projetos-item">
-            <div class="projeto-img">
-                <img src="assets/paineis/andamento.png" alt="Andamento de Processos">
             </div>
 
-            <div class="projeto-content">
-                <h3>Andamento de Processos</h3>
+            <div class="skill-card">
+                <span class="skill-icon">📊</span>
+                <h3>Power BI</h3>
                 <p>
-                    Dashboard com foco em processos administrativos
-                    na Secretária de Estado de Saúde do Piauí.
+                    DAX, Power Query, modelagem e dashboards interativos.
                 </p>
-
-                <button class="btn-primary"><a href="https://app.powerbi.com/view?r=eyJrIjoiYjZiM2NhNTQtNGU1Mi00MjhkLTkwMGEtOWUxMzFkZDRjNjBjIiwidCI6ImNhNTczMDIzLTViMWEtNDBmMS04YzNkLTJjNWVmNThlNGIzMCJ9">Ver Painel</a></button>
-            </div>
-        </div>
-
-        <div class="projetos-item">
-            <div class="projeto-img">
-                <img src="assets/paineis/transportes.png" alt="Transportes">
             </div>
 
-            <div class="projeto-content">
-                <h3>Transportes</h3>
+            <div class="skill-card">
+                <span class="skill-icon">🗄️</span>
+                <h3>Bancos de Dados</h3>
                 <p>
-                    Dashboard com foco em auxiliar no controle de veículos e abastecimento dos veículos da SESAPI.
+                    SQL, modelagem relacional e otimização de consultas.
                 </p>
-
-                <button class="btn-primary"><a href="https://app.powerbi.com/view?r=eyJrIjoiZjA1MDE3NDktN2VkYS00Y2ZiLWI4NzYtODI2YTkyZWY1NjkyIiwidCI6ImNhNTczMDIzLTViMWEtNDBmMS04YzNkLTJjNWVmNThlNGIzMCJ9">Ver Painel</a></button>
             </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">🔌</span>
+                <h3>APIs & Integrações</h3>
+                <p>
+                    Consumo de APIs públicas, web scraping e automações.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">📈</span>
+                <h3>Análise & Visualização</h3>
+                <p>
+                    KPIs, storytelling com dados e tomada de decisão.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">⚙️</span>
+                <h3>Dev & Automação</h3>
+                <p>
+                    Git, GitHub Pages, Docker e Airflow.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contato" class="footer">
+        <div class="footer-content">
+
+            <div class="footer-info">
+                <h3>Vamos conversar?</h3>
+                <p>
+                    Aberto a oportunidades, projetos e colaborações
+                    em dados, automação e visualização.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="lucs.pbl290@gmail.com">📧 Email</a>
+                <a href="https://github.com/seuusuario" target="_blank">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/in/seuperfil" target="_blank">💼 LinkedIn</a>
+            </div>
+
         </div>
 
-    </div>
-</section>
-
-<section id="habilidades" class="habilidades">
-    <h2>Habilidades Técnicas</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <span class="skill-icon">🐍</span>
-            <h3>Python</h3>
-            <p>
-                Pandas, automações, APIs, ETL e análise de dados.
-            </p>
+        <div class="footer-bottom">
+            <p>© 2026 Lucas Araujo • Feito com dados e café ☕</p>
         </div>
-
-        <div class="skill-card">
-            <span class="skill-icon">📊</span>
-            <h3>Power BI</h3>
-            <p>
-                DAX, Power Query, modelagem e dashboards interativos.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <span class="skill-icon">🗄️</span>
-            <h3>Bancos de Dados</h3>
-            <p>
-                SQL, modelagem relacional e otimização de consultas.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <span class="skill-icon">🔌</span>
-            <h3>APIs & Integrações</h3>
-            <p>
-                Consumo de APIs públicas, web scraping e automações.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <span class="skill-icon">📈</span>
-            <h3>Análise & Visualização</h3>
-            <p>
-                KPIs, storytelling com dados e tomada de decisão.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <span class="skill-icon">⚙️</span>
-            <h3>Dev & Automação</h3>
-            <p>
-                Git, GitHub Pages, Docker e Airflow.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<footer id="contato" class="footer">
-    <div class="footer-content">
-
-        <div class="footer-info">
-            <h3>Vamos conversar?</h3>
-            <p>
-                Aberto a oportunidades, projetos e colaborações
-                em dados, automação e visualização.
-            </p>
-        </div>
-
-        <div class="footer-links">
-            <a href="lucs.pbl290@gmail.com">📧 Email</a>
-            <a href="https://github.com/seuusuario" target="_blank">🐙 GitHub</a>
-            <a href="https://www.linkedin.com/in/seuperfil" target="_blank">💼 LinkedIn</a>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Lucas Araujo • Feito com dados e café ☕</p>
-    </div>
-</footer>
+    </footer>
 
 
 </body>
+
 </html>
