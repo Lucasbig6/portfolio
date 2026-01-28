@@ -79,12 +79,13 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 10px;
 }
 
 .hero-content {
     text-align: left;
     max-width: 800px;
+    padding: 50px;
 }
 
 .hero-content h1 {
@@ -468,6 +469,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    text-decoration: none;
 }
 
 .footer-links a {

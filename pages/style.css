@@ -139,3 +139,7 @@ iframe {
 .project-source::before {
     content: "ℹ";
 }
+
+.footer-bottom {
+    text-decoration: none;
+}
