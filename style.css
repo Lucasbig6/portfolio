@@ -42,6 +42,7 @@ body {
 
 .hero {
     position: relative;
+    padding: 20px;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -140,7 +141,7 @@ body {
 .career-section {
     padding: 100px 20px;
     background: #ffffff;
-    color: #555555;
+    color: #000000;
 }
 
 .career-section h2 {
@@ -178,7 +179,7 @@ body {
 .career-profile h3 {
     font-size: 26px;
     margin-bottom: 20px;
-    color: #302f2f;
+    color: #616060;
 }
 
 .profile-text {
