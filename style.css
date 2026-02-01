@@ -323,7 +323,7 @@ body {
 
 /* Imagem */
 .projeto-img {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 }
 
@@ -365,7 +365,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,188,212,0.4);
+    box-shadow: 0 5px 10px rgba(0,188,212,0.4);
     text-align: center;
     text-decoration: none;
 }

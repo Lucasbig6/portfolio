@@ -128,103 +128,31 @@
 
     <section id="projetos" class="projetos">
         <h2>Projetos de Destaque</h2>
-
-        <div class="projetos-container">
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/painel_dengue.png" alt="Painel Arboviroses">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Painel Arboviroses</h3>
-                    <p>
-                        Dashboard para apoio à tomada de decisão
-                        no combate à Dengue e Chikungunya na Secretária de Estado de Saúde do Piauí.
-                    </p>
-
-                    <a href="./pages/painel-arboviroses.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/andamento.png" alt="Andamento de Processos">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Andamento de Processos</h3>
-                    <p>
-                        Dashboard com foco em processos administrativos
-                        na Secretária de Estado de Saúde do Piauí.
-                    </p>
-
-                    <a href="./pages/andamento-processos.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/transportes.png" alt="Transportes">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Transportes</h3>
-                    <p>
-                        Dashboard com foco em auxiliar no controle de veículos e abastecimento dos veículos da SESAPI.
-                    </p>
-
-                    <a href="./pages/transportes.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/spotify.png" alt="Painel Spotify">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Painel Spotify</h3>
-                    <p>
-                        Dashboard interativo para análise de retrospectiva musical,
-                        explorando artistas mais ouvidos, gêneros e padrões de consumo anual.
-                    </p>
-
-                    <a href="./pages/spotify.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/avc_painel.png" alt="Painel AVC e Infarto Miocardiao">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Painel AVC e Infarto Miocardiao </h3>
-                    <p>
-                        Monitoramento de indicadores epidemiológicos de AVC e Infarto Agudo do Miocárdio, auxiliando na gestão de saúde e na análise de tendências e desfechos clínicos.
-                    </p>
-
-                    <a href="./pages/avc.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
-            <div class="projetos-item">
-                <div class="projeto-img">
-                    <img src="./assets/paineis/transito.png" alt="Acidentes de Trânsito">
-                </div>
-
-                <div class="projeto-content">
-                    <h3>Acidentes de Trânsito</h3>
-                    <p>
-                        Dashboard com foco em auxiliar no controle de acidentes de trânsito, com foco em acidentes com vítimas fatais e não fatais.
-                    </p>
-
-                    <a href="./pages/acidentes.html" class="btn-primary">Ver Projeto</a>
-                </div>
-            </div>
-
+        <div id="projetos-container" class="projetos-container">
+            <!-- Projetos carregados dinamicamente -->
+        </div>
     </section>
+
+    <script type="module">
+        import { projects } from './data/projects.js';
+
+        const container = document.getElementById('projetos-container');
+        container.innerHTML = projects.map(projeto => `
+            <div class="projetos-item">
+                <div class="projeto-img">
+                    <img src="${projeto.image}" alt="${projeto.title}">
+                </div>
+                <div class="projeto-content">
+                    <h3>${projeto.title}</h3>
+                    <p>${projeto.description}</p>
+                    <a href="./pages/projeto.html?id=${projeto.id}" class="btn-primary">
+                        Ver Projeto
+                        </a>
+
+                </div>
+            </div>
+        `).join('');
+    </script>
 
     <section id="habilidades" class="habilidades">
         <h2>Habilidades Técnicas</h2>

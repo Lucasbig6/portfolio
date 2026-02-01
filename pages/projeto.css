@@ -1,0 +1,174 @@
+/* =====================
+   Base
+===================== */
+
+body {
+  margin: 0;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+/* =====================
+   Layout
+===================== */
+
+.project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+}
+
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* =====================
+   Header
+===================== */
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 16px;
+}
+
+.project-header h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #f0f6fc;
+}
+
+/* =====================
+   Botão Voltar
+===================== */
+
+.back-link {
+  text-decoration: none;
+  color: #c9d1d9;
+  background: #21262d;
+  border: 1px solid #30363d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  background: #30363d;
+}
+
+/* =====================
+   Descrição
+===================== */
+
+.project-description {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 20px;
+  background: #0d1117;
+}
+
+.project-description h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #f0f6fc;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 8px;
+}
+
+/* =====================
+   Imagem
+===================== */
+
+.project-image img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+}
+
+/* =====================
+   Tecnologias
+===================== */
+
+.project-tech h3 {
+  margin-bottom: 12px;
+  color: #f0f6fc;
+}
+
+.project-tech ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-tech li {
+  background: #21262d;
+  border: 1px solid #30363d;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+
+/* =====================
+   Método
+===================== */
+
+.project-method {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 20px;
+  background: #0d1117;
+}
+
+.project-method h3 {
+  margin-bottom: 12px;
+  color: #f0f6fc;
+}
+
+.project-method p {
+  margin: 0;
+}
+
+
+/* =====================
+   Botão principal
+===================== */
+
+.btn-primary {
+  align-self: flex-start;
+  text-decoration: none;
+  background: #238636;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #2ea043;
+}
+
+/* =====================
+   Responsivo
+===================== */
+
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .project-header h1 {
+    font-size: 26px;
+  }
+}
