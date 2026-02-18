@@ -28,5 +28,37 @@ export const projects = [
     liveUrl:"https://app.powerbi.com/view?r=eyJrIjoiYjZiM2NhNTQtNGU1Mi00MjhkLTkwMGEtOWUxMzFkZDRjNjBjIiwidCI6ImNhNTczMDIzLTViMWEtNDBmMS04YzNkLTJjNWVmNThlNGIzMCJ9",
     image:"../assets/paineis/andamento.png",
     metodo:"Os dados são importados do sistema de processos SEI da SESAPI via webscraping e processados em Power BI. O painel é atualizado automaticamente a cada 24 horas."
+  },
+  {
+    id: 4,
+    slug: "Painel-Emprestimos",
+    title: "Painel Emprestifacil",
+    description: "Painel focado em monitoramento de empréstimos, e analises financeiras e de clientes.",
+    technologies: ["Power BI", "Python"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiNzVkOWY2MjMtZGI5NC00YzljLTkxZjMtZmIzZThjM2YwZWRkIiwidCI6ImNhNTczMDIzLTViMWEtNDBmMS04YzNkLTJjNWVmNThlNGIzMCJ9",
+    image: "../assets/paineis/Empresti.png",
+    metodo: "Dados gerados em Python com Python Faker, importados no Power BI"
+  },
+  {
+    id: 5,
+    slug: "Painel-Saude-Digital",
+    title: "Painel Monitoramento Saúde Digital",
+    description: "Painel focado em monitoramento de Atendimentos e Indicadores do Programa Saúde Digital.",
+    technologies: ["Power BI"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMTIxNmFkMDAtM2VkYS00NjJiLWI1ZDctM2JjN2E2MmRiODhkIiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9",
+    image: "../assets/paineis/saude.png",
+    metodo: "Esse Painel consiste em Levantar os dados do Programa como um todo, focado em levantar os dados como atendimentos, Especialidades e Regiões com maior acesso a atendimentos"
+
+  },
+  {
+    id: 6,
+    slug: "Painel-Lesoes-Autoprovocadas",
+    title: "Painel Lesões Autoprovocadas",
+    description: "Painel focado em monitoramento de lesões autoprovocadas.",
+    technologies: ["Power BI", "SQL"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiYmFmMDliODktN2FmZC00MWM5LTk4NTktN2ZmOWM3NzVkMTY0IiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9",
+    image: "../assets/paineis/autoprovocadas.png",
+    metodo: "Painel consiste em fontes vinda do SINAM - Sistema de Informação de Agravos deNotificação e SIM - Sistema de Informação de Mortalidade"
+
   }
 ];

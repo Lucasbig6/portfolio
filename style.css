@@ -302,13 +302,16 @@ body {
 .projetos-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
 }
 
 /* Card */
 .projetos-item {
+    flex: 1 1 300px;
+    max-width: 380px;
     background: #161b22;
     border-radius: 18px;
     overflow: hidden;
@@ -492,4 +495,3 @@ body {
     font-size: 14px;
     color: #8b949e;
 }
-
