@@ -60,5 +60,25 @@ export const projects = [
     image: "./assets/paineis/autoprovocadas.png",
     metodo: "Painel consiste em fontes vinda do SINAM - Sistema de Informação de Agravos deNotificação e SIM - Sistema de Informação de Mortalidade"
 
+  },
+  {
+    id: 7,
+    slug: "Painel-Forca-Trabalho",
+    title: "Painel Força de Trabalho",
+    description: "Painel focado em monitoramento de Força de Trabalho.",
+    technologies: ["Power BI"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiYTY4MGEyNTAtZWNlYy00NmIzLWJiNzYtZWI4YWE5MDEzNGY4IiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9",
+    image: "./assets/paineis/trabalho.png",
+    metodo: "Painel desenvolvido com foco em monitoramento de batidas e tempo de trabalho."
+  },
+  {
+    id: 8,
+    slug: "Painel-imunizacao",
+    title: "Painel Imunização",
+    description: "Painel focado em monitoramento de Imunização.",
+    technologies: ["Power BI"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiNTA4NTc0ZmQtNTE5ZS00ZGE0LWEwMGEtNjhjMjFmMDczM2M1IiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9",
+    image: "./assets/paineis/imunizacao.png",
+    metodo: "Painel focado em monitoramento de vacinas e e Imunizacao via SUS."
   }
 ];
