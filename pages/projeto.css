@@ -1,174 +1,204 @@
-/* =====================
-   Base
-===================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #00bcd4;
+    --primary-dark: #0097a7;
+    --bg-dark: #0d1117;
+    --bg-card: #161b22;
+    --text-main: #ffffff;
+    --text-muted: #c9d1d9;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Noto Sans", Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
 }
-
-/* =====================
-   Layout
-===================== */
 
 .project-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 96px 24px 64px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
 }
-
-.project-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-/* =====================
-   Header
-===================== */
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #30363d;
-  padding-bottom: 16px;
-}
-
-.project-header h1 {
-  font-size: 32px;
-  margin: 0;
-  color: #f0f6fc;
-}
-
-/* =====================
-   Botão Voltar
-===================== */
 
 .back-link {
-  text-decoration: none;
-  color: #c9d1d9;
-  background: #21262d;
-  border: 1px solid #30363d;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 14px;
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
 }
 
 .back-link:hover {
-  background: #30363d;
+    transform: translateX(-5px);
 }
 
-/* =====================
-   Descrição
-===================== */
-
-.project-description {
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  padding: 20px;
-  background: #0d1117;
+.project-header {
+    margin-bottom: 60px;
 }
 
-.project-description h2 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #f0f6fc;
-  border-bottom: 1px solid #30363d;
-  padding-bottom: 8px;
+.project-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* =====================
-   Imagem
-===================== */
-
-.project-image img {
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid #30363d;
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
-/* =====================
-   Tecnologias
-===================== */
-
-.project-tech h3 {
-  margin-bottom: 12px;
-  color: #f0f6fc;
+.tech-tag {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 500;
 }
 
-.project-tech ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.project-hero-img {
+    width: 100%;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.project-tech li {
-  background: #21262d;
-  border: 1px solid #30363d;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
+.project-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-/* =====================
-   Método
-===================== */
-
-.project-method {
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  padding: 20px;
-  background: #0d1117;
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
 
-.project-method h3 {
-  margin-bottom: 12px;
-  color: #f0f6fc;
+.project-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
 }
 
-.project-method p {
-  margin: 0;
+.project-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
+.project-section p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
 
-/* =====================
-   Botão principal
-===================== */
+.project-links {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+}
 
 .btn-primary {
-  align-self: flex-start;
-  text-decoration: none;
-  background: #238636;
-  color: #ffffff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: 600;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #000;
+    padding: 16px 36px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 .btn-primary:hover {
-  background: #2ea043;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
 }
 
-/* =====================
-   Responsivo
-===================== */
-
 @media (max-width: 768px) {
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
+    .project-hero-img {
+        height: 300px;
+    }
+    
+    .project-card {
+        padding: 30px 20px;
+    }
+}
 
-  .project-header h1 {
-    font-size: 26px;
-  }
+/* Footer Styles */
+.footer {
+    background: var(--bg-dark);
+    padding: 100px 20px 40px;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.footer-info p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 400px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--glass-border);
+    color: #666;
+    font-size: 0.9rem;
 }

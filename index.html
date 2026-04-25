@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section id="career" class="career-section">
+    <section id="career" class="career-section animate">
         <h2>Mapa de Carreira & Perfil</h2>
 
         <div class="career-layout">
@@ -105,10 +105,9 @@
                         <div class="timeline-card">
                             <span class="timeline-date">2020 – 2021</span>
                             <h3>Suporte de TI</h3>
-                            <h4>Suporte Tecnico de TI, focado em atendimentos para usuarios do hospital.</h4>
+                            <h4>Suporte Técnico de TI</h4>
                             <p>
-                                ETL, análise exploratória, relatórios estratégicos
-                                e apoio à decisão.
+                                Atendimento a usuários e suporte em sistemas hospitalares.
                             </p>
                         </div>
                     </div>
@@ -118,23 +117,27 @@
 
             <!-- Perfil / Sobre mim -->
             <div class="career-profile">
-                <h3>Perfil</h3>
+                <h3>O Especialista</h3>
 
                 <p class="profile-text">
-                    Sou <strong>Analista de Dados Pleno</strong> com foco em automação de processos, análise exploratória e desenvolvimento de dashboards estratégicos para apoio à gestão pública, especialmente na área da saúde. 
-                    Atuo na extração automatizada de dados governamentais, tratamento de grandes volumes de informação e criação de soluções orientadas a dados que reduzem tarefas manuais e aumentam a eficiência na tomada de decisão.
-                    Possuo experiência com <strong>Python (Pandas, Playwright), SQL, Power BI e aplicações de Machine Learning </strong> aplicadas a dados públicos, climáticos e indicadores de saúde.
-                    Meu objetivo é transformar dados brutos em inteligência acionável, gerando impacto real na gestão pública por meio de soluções analíticas, automatizadas e escaláveis.
+                    Sou <strong>Analista de Dados Pleno</strong> especializado em transformar dados complexos em decisões estratégicas. 
+                    Com forte atuação na <strong>gestão pública de saúde</strong>, desenvolvo soluções que automatizam processos críticos e revelam insights valiosos através de Machine Learning e visualização avançada.
+                </p>
+                
+                <p class="profile-text">
+                    Minha expertise envolve <strong>Python, SQL e Power BI</strong>, com foco em criar pipelines de dados escaláveis que reduzem o trabalho manual e aumentam a eficiência operacional.
                 </p>
 
-                <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primary">Explorar Projetos</a>
+                </div>
             </div>
 
 
         </div>
     </section>
 
-    <section id="projetos" class="projetos">
+    <section id="projetos" class="projetos animate">
         <h2>Projetos de Destaque</h2>
         <div id="projetos-container" class="projetos-container">
             <!-- Projetos carregados dinamicamente -->
@@ -148,21 +151,41 @@
         container.innerHTML = projects.map(projeto => `
             <div class="projetos-item">
                 <div class="projeto-img">
-                    <img src="${projeto.image}" alt="${projeto.title}">
+                    <img src="./${projeto.image}" alt="${projeto.title}" loading="lazy">
                 </div>
                 <div class="projeto-content">
                     <h3>${projeto.title}</h3>
                     <p>${projeto.description}</p>
                     <a href="./pages/projeto.html?id=${projeto.id}" class="btn-primary">
-                        Ver Projeto
-                        </a>
-
+                        Ver Detalhes
+                    </a>
                 </div>
             </div>
         `).join('');
+
+        // Scroll Reveal Script
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
     </script>
 
-    <section id="habilidades" class="habilidades">
+    <section id="habilidades" class="habilidades animate">
         <h2>Habilidades Técnicas</h2>
 
         <div class="skills-grid">
@@ -170,75 +193,62 @@
             <div class="skill-card">
                 <span class="skill-icon">🐍</span>
                 <h3>Python</h3>
-                <p>
-                    Pandas, automações, APIs, ETL e análise de dados.
-                </p>
+                <p>Pandas, automações, APIs, ETL e análise preditiva.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-icon">📊</span>
                 <h3>Power BI</h3>
-                <p>
-                    DAX, Power Query, modelagem e dashboards interativos.
-                </p>
+                <p>DAX avançado, modelagem Star Schema e Storytelling.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-icon">🗄️</span>
                 <h3>Bancos de Dados</h3>
-                <p>
-                    SQL, modelagem relacional e otimização de consultas.
-                </p>
+                <p>SQL Server, PostgreSQL e otimização de queries complexas.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-icon">🔌</span>
-                <h3>APIs & Integrações</h3>
-                <p>
-                    Consumo de APIs públicas, web scraping e automações.
-                </p>
+                <h3>Integrações</h3>
+                <p>Web Scraping, APIs REST e automação de fluxos de dados.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-icon">📈</span>
-                <h3>Análise & Visualização</h3>
-                <p>
-                    KPIs, storytelling com dados e tomada de decisão.
-                </p>
+                <h3>Estatística</h3>
+                <p>Análise exploratória, KPIs e métricas de desempenho.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-icon">⚙️</span>
-                <h3>Dev & Automação</h3>
-                <p>
-                    Git, GitHub Pages, Docker e Airflow.
-                </p>
+                <h3>DevOps</h3>
+                <p>Git, Docker e deploy de aplicações de dados.</p>
             </div>
 
         </div>
     </section>
 
-    <footer id="contato" class="footer">
+    <footer id="contato" class="footer animate">
         <div class="footer-content">
 
             <div class="footer-info">
-                <h3>Vamos conversar?</h3>
+                <h3>Vamos elevar o nível dos seus dados?</h3>
                 <p>
-                    Aberto a oportunidades, projetos e colaborações
-                    em dados, automação e visualização.
+                    Estou disponível para novos desafios, parcerias e projetos inovadores.
                 </p>
             </div>
 
             <div class="footer-links">
-                <a href="lucs.pbl290@gmail.com">📧 Email</a>
+                <a href="mailto:lucs.pbl290@gmail.com">📧 Email</a>
                 <a href="https://github.com/Lucasbig6" target="_blank">🐙 GitHub</a>
-                <a href="www.linkedin.com/in/lucas-pablo-33885520b" target="_blank">💼 LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucas-pablo-33885520b" target="_blank">💼 LinkedIn</a>
             </div>
 
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Lucas Araujo • Feito com dados e muito café ☕</p>
+            <p>© 2026 Lucas Araujo • Data Driven Design ⚡</p>
         </div>
     </footer>
 

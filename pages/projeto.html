@@ -24,49 +24,67 @@
 
     if (!project) {
       container.innerHTML = `
-        <section class="project-detail">
+        <section class="project-header">
           <h1>Projeto não encontrado</h1>
-          <a href="../index.html" class="back-link">← Voltar</a>
+          <a href="../index.html" class="back-link">← Voltar para o Início</a>
         </section>
       `;
     } else {
       document.title = `${project.title} | Lucas Pablo`;
 
       container.innerHTML = `
-        <section class="project-detail">
+        <a href="../index.html" class="back-link">← Voltar para o Início</a>
+        
+        <header class="project-header">
+          <h1>${project.title}</h1>
+          <div class="project-meta">
+            ${project.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+          </div>
+        </header>
 
-          <div class="project-header">
-            <h1>${project.title}</h1>
-            <a href="../index.html" class="back-link">← Voltar</a>
+        ${
+          project.image
+            ? `
+            <div class="project-hero-img">
+              <img src="../${project.image}" alt="${project.title}">
+            </div>
+            `
+            : ''
+        }
+
+        <div class="project-grid">
+          
+          <div class="project-card">
+            <section class="project-section">
+              <h2>🎯 O Desafio</h2>
+              <p>${project.challenge}</p>
+            </section>
           </div>
 
-          <div class="project-description">
-            <h2>Descrição</h2>
-            <p>${project.description}</p>
+          <div class="project-card">
+            <section class="project-section">
+              <h2>💡 A Solução</h2>
+              <p>${project.solution}</p>
+            </section>
           </div>
 
-          ${
-            project.image
-              ? `
-              <div class="project-image">
-                <img src="${project.image}" alt="${project.title}">
-              </div>
-              `
-              : ''
-          }
-
-          <div class="project-tech">
-            <h3>Tecnologias</h3>
-            <ul>
-              ${project.technologies.map(t => `<li>${t}</li>`).join('')}
-            </ul>
+          <div class="project-card">
+            <section class="project-section">
+              <h2>🚀 Resultados</h2>
+              <p>${project.results}</p>
+            </section>
           </div>
 
-          <div class="project-method">
-            <h3>Método</h3>
-            <p>${project.metodo}</p>
+          <div class="project-card">
+            <section class="project-section">
+              <h2>🛠️ Metodologia Técnica</h2>
+              <p>${project.method}</p>
+            </section>
           </div>
 
+        </div>
+
+        <div class="project-links">
           ${
             project.liveUrl
               ? `
@@ -74,17 +92,67 @@
                 href="${project.liveUrl}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn-primary project-link"
+                class="btn-primary"
               >
-                Ver Projeto Online
+                Ver Dashboard / Aplicação
               </a>
               `
               : ''
           }
-
-        </section>
+          ${
+            project.githubUrl
+              ? `
+              <a
+                href="${project.githubUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+                style="background: #21262d; color: #fff; border: 1px solid #30363d;"
+              >
+                Código no GitHub
+              </a>
+              `
+              : ''
+          }
+        </div>
       `;
     }
+  </script>
+
+  <footer id="contato" class="footer animate">
+      <div class="footer-content">
+          <div class="footer-info">
+              <h3>Gostou deste projeto?</h3>
+              <p>Vamos conversar sobre como posso aplicar essas soluções no seu negócio.</p>
+          </div>
+          <div class="footer-links">
+              <a href="mailto:lucs.pbl290@gmail.com">📧 Email</a>
+              <a href="https://github.com/Lucasbig6" target="_blank">🐙 GitHub</a>
+              <a href="https://www.linkedin.com/in/lucas-pablo-33885520b" target="_blank">💼 LinkedIn</a>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>© 2026 Lucas Araujo • Data Driven Design ⚡</p>
+      </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal for Footer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+    });
   </script>
 
 </body>
