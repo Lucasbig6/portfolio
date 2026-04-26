@@ -102,5 +102,18 @@ export const projects = [
     solution: "Consolidação de dados de doses aplicadas versus população alvo, com alertas visuais para baixas coberturas.",
     results: "Facilitou a identificação de municípios com baixa adesão vacinal para campanhas de busca ativa.",
     method: "Cálculo de cobertura vacinal baseado em estimativas populacionais do IBGE integradas ao SIPNI."
+  },
+  {
+    id: 9,
+    slug: "saude-digital",
+    title: "Piauí Saúde Digital",
+    description: "Plataforma de Teleatendimentos médicos e teleconsultas.",
+    technologies: ["HTML", "CSS", "JavaScript", "Angular"],
+    liveUrl: "https://app.piauisaudedigital.com.br/auth/login",
+    image: "assets/paineis/saude_digital.png",
+    challenge: "Os pacientes do Sistema Único de Saúde (SUS) enfrentam dificuldades significativas no acesso à saúde. A falta de médicos, especialmente especialistas, em regiões remotas gera longas filas de espera. Muitas pessoas não possuem transporte ou recursos financeiros para se deslocarem até os centros de saúde, agravando o quadro de saúde pela demora no atendimento.",
+    solution: "Desenvolvimento de uma plataforma de telemedicina que permite o agendamento e a realização de consultas médicas totalmente online. O sistema conecta pacientes a médicos em tempo real, oferecendo atendimento clínico geral e especializado sem a necessidade de deslocamento. Além disso, a plataforma integra o sistema de resultados de exames, centralizando o histórico de saúde do paciente em um único local seguro e acessível.",
+    results: "Diminuição drástica no tempo de espera por atendimento médico, democratização do acesso à saúde para populações de baixa renda e residentes em áreas remotas, e maior eficiência na gestão de recursos de saúde pública, permitindo que médicos atendam mais pacientes de forma otimizada.",
+    method: "Contribuição com frontend do Sistema, integração com banco de dados (SQL) para gerenciamento de consultas, prescrições e exames e  "
   }
 ];
