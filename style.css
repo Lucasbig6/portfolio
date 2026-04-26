@@ -33,6 +33,10 @@ body {
     overflow-x: hidden;
 }
 
+.print-only {
+    display: none;
+}
+
 /* Animações */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -710,4 +714,155 @@ body {
     border-top: 1px solid var(--glass-border);
     color: #666;
     font-size: 0.9rem;
+}
+/* Estilos de Impressão (CV Clássico) */
+@media print {
+    .print-only {
+        display: block !important;
+    }
+
+    .header, .hero, .hero-buttons, .filter-container, .btn-card, .footer, 
+    .projeto-overlay, .hero-video, .hero-overlay, .skill-icon, .soft-icon, 
+    .projeto-img, .timeline-point, .timeline::before {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 10pt;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0.5cm;
+    }
+
+    .print-header {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 15px;
+    }
+
+    .print-header h1 {
+        font-size: 24pt;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    .print-subtitle {
+        font-size: 14pt;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .print-contact {
+        font-size: 10pt;
+    }
+
+    section {
+        padding: 15px 0 !important;
+        background: #fff !important;
+        page-break-inside: avoid;
+    }
+
+    h2 {
+        font-size: 14pt !important;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+        margin-bottom: 10px !important;
+        padding-bottom: 3px;
+        color: #000 !important;
+    }
+
+    .career-layout {
+        display: block !important;
+    }
+
+    .career-profile {
+        display: none; /* Hide the bio block to focus on timeline and projects */
+    }
+
+    .timeline-item {
+        padding-left: 0 !important;
+        margin-bottom: 15px;
+    }
+
+    .timeline-card, .projetos-item, .skill-card, .soft-card {
+        background: #fff !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        margin-bottom: 10px;
+    }
+
+    .timeline-date {
+        font-weight: bold;
+        color: #000 !important;
+    }
+
+    .timeline-card h3, .projeto-content h3 {
+        font-size: 12pt !important;
+        margin-bottom: 2px !important;
+    }
+
+    .timeline-card h4 {
+        font-style: italic;
+        margin-bottom: 5px !important;
+    }
+
+    .projeto-content {
+        padding: 0 !important;
+    }
+
+    .projeto-tags {
+        margin-bottom: 5px !important;
+    }
+
+    .tag {
+        border: none !important;
+        padding: 0 !important;
+        margin-right: 10px;
+        font-weight: bold;
+        background: transparent !important;
+        color: #000 !important;
+    }
+
+    .tag::after {
+        content: ",";
+    }
+
+    .tag:last-child::after {
+        content: "";
+    }
+
+    .skills-grid, .softskills-container {
+        display: block !important;
+    }
+
+    .skill-card, .soft-card {
+        display: inline-block;
+        width: 48%;
+        vertical-align: top;
+        margin-bottom: 10px;
+    }
+
+    .stat-val, .stat-suffix {
+        font-size: 12pt !important;
+        color: #000 !important;
+        font-weight: bold;
+    }
+
+    .stats-container {
+        display: block !important;
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 5px;
+    }
+
+    .projeto-footer {
+        display: none;
+    }
 }
