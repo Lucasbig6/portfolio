@@ -115,5 +115,18 @@ export const projects = [
     solution: "Desenvolvimento de uma plataforma de telemedicina que permite o agendamento e a realização de consultas médicas totalmente online. O sistema conecta pacientes a médicos em tempo real, oferecendo atendimento clínico geral e especializado sem a necessidade de deslocamento. Além disso, a plataforma integra o sistema de resultados de exames, centralizando o histórico de saúde do paciente em um único local seguro e acessível.",
     results: "Diminuição drástica no tempo de espera por atendimento médico, democratização do acesso à saúde para populações de baixa renda e residentes em áreas remotas, e maior eficiência na gestão de recursos de saúde pública, permitindo que médicos atendam mais pacientes de forma otimizada.",
     method: "Contribuição com frontend do Sistema, integração com banco de dados (SQL) para gerenciamento de consultas, prescrições e exames e  "
+  },
+  {
+    id: 10,
+    slug: "regula-piaui",
+    title: "Regula Piauí",
+    description: "Painel de fila de atendimentos para regulação de leitos hospitalares.",
+    technologies: ["Power BI", "DAX"],
+    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiYmMxODJhYmEtYjU1Ni00ZWM5LTk2ODgtNmZmYzM2ZjE3ODU1IiwidCI6IjQwN2VmYjUxLTM3YTEtNDI5Mi04NWI0LTc1NTc2MjY0YjU5YiJ9",
+    image: "assets/paineis/regula_pi.png",
+    challenge: "A gestão de leitos hospitalares no sistema público de saúde é um desafio complexo que envolve a alocação eficiente de recursos limitados para atender a uma demanda crescente. A falta de transparência nos dados dificulta o acompanhamento em tempo real da disponibilidade de leitos, resultando em longas filas de espera e prejuízos para a saúde dos pacientes.",
+    solution: "Criação de um dashboard em tempo real que monitora a ocupação de leitos hospitalares, o tempo de espera por atendimento e a eficiência da regulação. O sistema permite que gestores identifiquem gargalos no fluxo de pacientes e tomem decisões rápidas para otimizar a alocação de leitos.",
+    results: "Diminuição drástica no tempo de espera por atendimento médico, democratização do acesso à saúde para populações de baixa renda e residentes em áreas remotas, e maior eficiência na gestão de recursos de saúde pública, permitindo que médicos atendam mais pacientes de forma otimizada.",
+    method: "Integração de dados da SIH com indicadores de tempo de permanência e fluxo de pacientes. Otimização das consultas SQL e criação de medidas DAX para cálculo de taxas de ocupação e tempo médio de espera. Desenvolvimento de visualizações interativas para identificação de gargalos logísticos."
   }
 ];
