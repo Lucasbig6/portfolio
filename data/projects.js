@@ -128,5 +128,18 @@ export const projects = [
     solution: "Construí um painel para acompanhar fila, ocupação e tempos, com visões por unidade/perfil e recortes por período para análise de eficiência.",
     results: "Mais transparência e velocidade na leitura do fluxo, apoiando decisões de priorização e acompanhamento de capacidade ao longo do tempo.",
     method: "Modelagem e consolidação de dados; medidas DAX para taxas e tempos médios; visuais orientados a perguntas de gestão e identificação de gargalos."
+  },
+  {
+    id: 11,
+    slug: "clima-sistema",
+    title: "Sistema de Monitoramento Climático",
+    description: "Aplicação para monitorar e analisar dados climáticos, com visualizações interativas e alertas para eventos extremos.",
+    technologies: ["Python", "FastAPI", "DuckDB", "Requests"],
+    liveUrl: "https://github.com/Lucasbig6/clima",
+    image: "assets/paineis/clima.png",
+    challenge: "Integrar dados de múltiplas fontes climáticas, processar grandes volumes de dados e fornecer insights acionáveis para usuários finais.",
+    solution: "Desenvolvi um sistema backend com FastAPI para ingestão e processamento de dados climáticos, utilizando DuckDB para consultas eficientes e Requests para integração com APIs externas.",
+    results: "Sistema funcional que permite monitorar condições climáticas em tempo real, identificar padrões e receber alertas para eventos extremos, contribuindo para a tomada de decisões informadas.",
+    method: "Design de API RESTful, modelagem de dados para eficiência de consultas, implementação de lógica de negócios para análise climática e integração contínua com fontes de dados externas."
   }
 ];
