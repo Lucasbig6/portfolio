@@ -22,6 +22,35 @@
     const project = projects.find(p => p.id === projectId);
     const container = document.getElementById('project-container');
 
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function isHealthcareProject(p) {
+      const hay = `${p.title} ${p.description} ${p.technologies?.join(' ')}`.toLowerCase();
+      return hay.includes('saúde') || hay.includes('sus') || hay.includes('health') || hay.includes('epid') || hay.includes('imun') || hay.includes('arbov');
+    }
+
+    function buildHighlights(p) {
+      const tech = (p.technologies || []).map(t => t.toLowerCase());
+      const highlights = [];
+
+      if (tech.some(t => t.includes('power bi') || t.includes('dax'))) highlights.push('Modelagem e visualizações orientadas a perguntas de gestão');
+      if (tech.some(t => t.includes('sql'))) highlights.push('Consultas e validações para consistência e rastreabilidade');
+      if (tech.some(t => t.includes('python'))) highlights.push('Automação/ETL para reduzir trabalho manual e padronizar entregas');
+      if (tech.some(t => t.includes('playwright') || t.includes('scraping') || t.includes('automation'))) highlights.push('Automação resiliente com tratamento de falhas e reprocessamento');
+      if (tech.some(t => t.includes('streamlit') || t.includes('plotly'))) highlights.push('Produto de dados com UX simples e visual interativo');
+      if (tech.some(t => t.includes('angular') || t.includes('javascript') || t.includes('html') || t.includes('css'))) highlights.push('Interface responsiva e foco em fluxo do usuário');
+      if (tech.some(t => t.includes('data modeling') || t.includes('data engineering'))) highlights.push('Estrutura de dados pensada para escala e manutenção');
+
+      return [...new Set(highlights)].slice(0, 5);
+    }
+
     if (!project) {
       container.innerHTML = `
         <section class="project-header">
@@ -31,90 +60,120 @@
       `;
     } else {
       document.title = `${project.title} | Lucas Pablo`;
+      const healthcare = isHealthcareProject(project);
+      const highlights = buildHighlights(project);
 
       container.innerHTML = `
-        <a href="../index.html" class="back-link">← Voltar para o Início</a>
-        
+        <a href="../index.html" class="back-link">← Voltar para o Portfólio</a>
+
         <header class="project-header">
-          <h1>${project.title}</h1>
-          <div class="project-meta">
-            ${project.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+          <div class="project-title">
+            <h1>${escapeHtml(project.title)}</h1>
+            <p class="project-subtitle">${escapeHtml(project.description || '')}</p>
           </div>
+
+          <div class="project-actions">
+            ${
+              project.liveUrl
+                ? `
+                <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                  Ver Demo
+                </a>
+                `
+                : ''
+            }
+            ${
+              project.githubUrl
+                ? `
+                <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  Código
+                </a>
+                `
+                : ''
+            }
+          </div>
+
+          <div class="project-meta">
+            ${project.technologies.map(t => `<span class="tech-tag">${escapeHtml(t)}</span>`).join('')}
+          </div>
+
+          <nav class="project-nav" aria-label="Navegação do projeto">
+            <a href="#resumo">Resumo</a>
+            <a href="#desafio">Desafio</a>
+            <a href="#solucao">Solução</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#metodo">Metodologia</a>
+          </nav>
         </header>
 
         ${
           project.image
             ? `
             <div class="project-hero-img">
-              <img src="../${project.image}" alt="${project.title}">
+              <img src="../${project.image}" alt="${escapeHtml(project.title)}">
             </div>
             `
             : ''
         }
 
+        <section id="resumo" class="project-grid">
+          <div class="project-card project-summary">
+            <div class="summary-grid">
+              <div class="summary-block">
+                <h2>Resumo</h2>
+                <p>${escapeHtml(project.description || '')}</p>
+                ${
+                  healthcare
+                    ? `
+                    <div class="privacy-note">
+                      <strong>Confidencialidade:</strong> este case é apresentado sem dados pessoais/sensíveis; foco em arquitetura, regras e impacto.
+                    </div>
+                    `
+                    : ''
+                }
+              </div>
+              <div class="summary-block">
+                <h3>Destaques técnicos</h3>
+                ${
+                  highlights.length
+                    ? `<ul class="highlights">${highlights.map(h => `<li>${escapeHtml(h)}</li>`).join('')}</ul>`
+                    : `<p class="muted">Tecnologias e decisões técnicas descritas nas seções abaixo.</p>`
+                }
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div class="project-grid">
-          
           <div class="project-card">
-            <section class="project-section">
-              <h2>🎯 O Desafio</h2>
-              <p>${project.challenge}</p>
+            <section id="desafio" class="project-section">
+              <h2>🎯 O desafio</h2>
+              <p>${escapeHtml(project.challenge || '')}</p>
             </section>
           </div>
 
           <div class="project-card">
-            <section class="project-section">
-              <h2>💡 A Solução</h2>
-              <p>${project.solution}</p>
+            <section id="solucao" class="project-section">
+              <h2>💡 A solução</h2>
+              <p>${escapeHtml(project.solution || '')}</p>
             </section>
           </div>
 
           <div class="project-card">
-            <section class="project-section">
+            <section id="resultados" class="project-section">
               <h2>🚀 Resultados</h2>
-              <p>${project.results}</p>
+              <p>${escapeHtml(project.results || '')}</p>
             </section>
           </div>
 
           <div class="project-card">
-            <section class="project-section">
-              <h2>🛠️ Metodologia Técnica</h2>
-              <p>${project.method}</p>
+            <section id="metodo" class="project-section">
+              <h2>🛠️ Metodologia técnica</h2>
+              <p>${escapeHtml(project.method || '')}</p>
             </section>
           </div>
-
         </div>
 
-        <div class="project-links">
-          ${
-            project.liveUrl
-              ? `
-              <a
-                href="${project.liveUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary"
-              >
-                Ver Dashboard / Aplicação
-              </a>
-              `
-              : ''
-          }
-          ${
-            project.githubUrl
-              ? `
-              <a
-                href="${project.githubUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary"
-                style="background: #21262d; color: #fff; border: 1px solid #30363d;"
-              >
-                Código no GitHub
-              </a>
-              `
-              : ''
-          }
-        </div>
       `;
     }
   </script>
@@ -122,13 +181,11 @@
   <footer id="contato" class="footer animate">
       <div class="footer-content">
           <div class="footer-info">
-              <h3>Gostou deste projeto?</h3>
-              <p>Vamos conversar sobre como posso aplicar essas soluções no seu negócio.</p>
+              <h3>Mais projetos no portfólio</h3>
+              <p>Veja outros cases e entregas no portfólio principal.</p>
           </div>
           <div class="footer-links">
-              <a href="mailto:lucs.pbl290@gmail.com">📧 Email</a>
-              <a href="https://github.com/Lucasbig6" target="_blank">🐙 GitHub</a>
-              <a href="https://www.linkedin.com/in/lucas-pablo-33885520b" target="_blank">💼 LinkedIn</a>
+              <a href="../index.html">← Voltar para o Portfólio</a>
           </div>
       </div>
       <div class="footer-bottom">
